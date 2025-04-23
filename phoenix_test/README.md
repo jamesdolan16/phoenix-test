@@ -1,5 +1,19 @@
 # PhoenixTest
 
+To setup docker container:
+ 
+  * In `/phoenix_test` run `docker-compose build`
+  * Run `docker-compose up -d`
+
+To setup the Phoenix project:
+
+  * Open a shell in the web container `docker exec -it phoenix_test-web-1 sh`
+  * Run `mix setup` to install and setup deps
+
+To setup assets:
+
+  * In `/phoenix_test/assets` run `npm install`
+
 To start your Phoenix server:
 
   * Run `mix setup` to install and setup dependencies
