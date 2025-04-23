@@ -3,10 +3,22 @@
   "version": "1.0.0",
   "main": "tailwind.config.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "deploy": "npx tailwindcss -i ./css/app.css -o ../priv/static/assets/app.css --minify && esbuild js/app.js --bundle --target=es2017 --outdir=../priv/static/assets --minify --external:phoenix",
+    "watch": "npx tailwindcss -i ./css/app.css -o ../priv/static/assets/app.css --watch && esbuild js/app.js --bundle --target=es2017 --outdir=../priv/static/assets --watch --external:phoenix"
   },
   "keywords": [],
   "author": "",
   "license": "ISC",
-  "description": ""
+  "description": "",
+  "devDependencies": {
+    "auto-prefixer": "^0.4.2",
+    "concurrently": "^9.1.2",
+    "esbuild": "^0.25.3",
+    "postcss": "^8.5.3",
+    "tailwindcss": "^3.4.17"
+  },
+  "dependencies": {
+    "@tailwindcss/forms": "^0.5.10"
+  }
 }
